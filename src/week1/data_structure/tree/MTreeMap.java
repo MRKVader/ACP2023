@@ -9,7 +9,7 @@ public class MTreeMap<K, V> implements Map<K, V> {
     public static final int DEFAULT_TABLE_SIZE = 16;
     private int size;
 
-    private MyNode<K, V>[] table = new MyNode[DEFAULT_TABLE_SIZE];
+    private MNode<K, V>[] table = new MNode[DEFAULT_TABLE_SIZE];
 
     @Override
     public int size() {
@@ -42,9 +42,9 @@ public class MTreeMap<K, V> implements Map<K, V> {
         int position = hash % table.length;
 
         if (table[position] == null) {
-            table[position] = new MyNode<K, V>(key, value, null);
+            table[position] = new MNode<K, V>(key, value, null);
         } else {
-            MyNode<K, V> iter = table[position];
+            MNode<K, V> iter = table[position];
             do {
                     if (iter.key.equals(key)) {
                         V oldValue = iter.value;
@@ -54,7 +54,7 @@ public class MTreeMap<K, V> implements Map<K, V> {
                     iter = iter.next;
                 }
                 while (iter.next != null) ;
-                iter.next = new MyNode<K, V>(key, value, null);
+                iter.next = new MNode<K, V>(key, value, null);
         }
         size++;
         return null;
