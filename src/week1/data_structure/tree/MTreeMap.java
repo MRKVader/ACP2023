@@ -43,6 +43,14 @@ public class MTreeMap<K, V> implements Map<K, V> {
         if(table[position] == null){
             table[position] = new MyNode<K,V>(key, value, null);
         } else {
+            MyNode<K, V> iter = table[position];
+            while (iter != null){
+                if (iter.key.equals(key)){
+                    V oldValue = iter.value;
+                    iter.value = value;
+                    return oldValue;
+                }
+            }
             table[position] = new MyNode<K,V>(key, value, table[position]);
         }
 
