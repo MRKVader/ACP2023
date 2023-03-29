@@ -7,12 +7,13 @@ import java.util.Set;
 public class MTreeMap<K, V> implements Map<K, V> {
 
     public static final int DEFAULT_TABLE_SIZE = 16;
+    private int size;
 
-    private MyNode<K,V>[] table =  new MyNode[DEFAULT_TABLE_SIZE];
+    private MyNode<K, V>[] table = new MyNode[DEFAULT_TABLE_SIZE];
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -40,50 +41,52 @@ public class MTreeMap<K, V> implements Map<K, V> {
         int hash = Math.abs(key.hashCode());
         int position = hash % table.length;
 
-        if(table[position] == null){
-            table[position] = new MyNode<K,V>(key, value, null);
+        if (table[position] == null) {
+            table[position] = new MyNode<K, V>(key, value, null);
         } else {
             MyNode<K, V> iter = table[position];
-            while (iter != null){
-                if (iter.key.equals(key)){
-                    V oldValue = iter.value;
-                    iter.value = value;
-                    return oldValue;
+            do {
+                    if (iter.key.equals(key)) {
+                        V oldValue = iter.value;
+                        iter.value = value;
+                        return oldValue;
+                    }
+                    iter = iter.next;
                 }
-            }
-            table[position] = new MyNode<K,V>(key, value, table[position]);
+                while (iter.next != null) ;
+                iter.next = new MyNode<K, V>(key, value, null);
+        }
+        size++;
+        return null;
+    }
+
+        @Override
+        public V remove (Object key){
+            return null;
         }
 
-        return null;
+        @Override
+        public void putAll (Map m){
+
+        }
+
+        @Override
+        public void clear () {
+
+        }
+
+        @Override
+        public Set keySet () {
+            return null;
+        }
+
+        @Override
+        public Collection values () {
+            return null;
+        }
+
+        @Override
+        public Set<Entry<K, V>> entrySet () {
+            return null;
+        }
     }
-
-    @Override
-    public V remove(Object key) {
-        return null;
-    }
-
-    @Override
-    public void putAll(Map m) {
-
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Set keySet() {
-        return null;
-    }
-
-    @Override
-    public Collection values() {
-        return null;
-    }
-
-    @Override
-    public Set<Entry<K, V>> entrySet() {
-        return null;
-    }
-}
