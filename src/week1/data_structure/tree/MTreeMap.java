@@ -1,8 +1,6 @@
 package week1.data_structure.tree;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MTreeMap<K, V> implements Map<K, V> {
 
@@ -46,47 +44,97 @@ public class MTreeMap<K, V> implements Map<K, V> {
         } else {
             MNode<K, V> iter = table[position];
             do {
-                    if (iter.key.equals(key)) {
-                        V oldValue = iter.value;
-                        iter.value = value;
-                        return oldValue;
-                    }
-                    iter = iter.next;
+                if (iter.key.equals(key)) {
+                    V oldValue = iter.value;
+                    iter.value = value;
+                    return oldValue;
                 }
-                while (iter.next != null) ;
-                iter.next = new MNode<K, V>(key, value, null);
+                iter = iter.next;
+            }
+            while (iter.next != null);
+            iter.next = new MNode<K, V>(key, value, null);
         }
         size++;
         return null;
     }
 
-        @Override
-        public V remove (Object key){
-            return null;
+    @Override
+    public V remove(Object key) {
+        return null;
+    }
+
+    @Override
+    public void putAll(Map m) {
+
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public Set keySet() {
+        Set<K> keys = new HashSet<K>();
+
+        Iterator<MNode<K,V>> iterator = new MHashMapIterator();
+
+        while (iterator.hasNext()){
+            keys.add(iterator.next().key);
+        }
+
+        return keys;
+    }
+
+    @Override
+    public Collection values() {
+        Collection<V> values = new HashSet<V>();
+
+        Iterator<MNode<K,V>> iterator = new MHashMapIterator();
+
+        while (iterator.hasNext()){
+            values.add(iterator.next().value);
+        }
+
+        return values;
+    }
+
+    @Override
+    public Set<Entry<K, V>> entrySet() {
+        return null;
+    }
+
+    private class MHashMapIterator implements Iterator<MNode<K, V>> {
+
+        int currentIndex;
+        MNode<K, V> currNode;
+
+        public MHashMapIterator() {
+            firstFoundNotNull();
+        }
+
+        private void firstFoundNotNull() {
+            for (; currentIndex < table.length && table[currentIndex] != null; currentIndex++) {
+            }
+
+            currNode = currentIndex < table.length ? table[currentIndex] : null;
         }
 
         @Override
-        public void putAll (Map m){
-
+        public boolean hasNext() {
+            return currNode != null;
         }
 
         @Override
-        public void clear () {
+        public MNode<K, V> next() {
+            MNode<K, V> ret = currNode;
 
-        }
-
-        @Override
-        public Set keySet () {
-            return null;
-        }
-
-        @Override
-        public Collection values () {
-            return null;
-        }
-
-        @Override
-        public Set<Entry<K, V>> entrySet () {
+            if (currNode.next != null) {
+                currNode = currNode.next;
+            } else {
+                firstFoundNotNull();
+            }
             return null;
         }
     }
+}
