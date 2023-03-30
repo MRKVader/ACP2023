@@ -101,6 +101,9 @@ public class MTreeMap<K, V> implements Map<K, V> {
 
     @Override
     public Set<Entry<K, V>> entrySet() {
+        Set<Entry<K,V>> entrySet = new HashSet<Entry<K, V>>();
+
+
         return null;
     }
 
