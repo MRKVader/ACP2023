@@ -103,6 +103,11 @@ public class MTreeMap<K, V> implements Map<K, V> {
     public Set<Entry<K, V>> entrySet() {
         Set<Entry<K,V>> entrySet = new HashSet<Entry<K, V>>();
 
+        Iterator<MNode<K,V>> iterator = new MHashMapIterator();
+
+        while (iterator.hasNext()){
+            entrySet.add(iterator.next());
+        }
 
         return null;
     }

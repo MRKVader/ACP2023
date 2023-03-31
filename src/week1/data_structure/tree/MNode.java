@@ -1,6 +1,8 @@
 package week1.data_structure.tree;
 
-public class MNode<NK, NV> {
+import java.util.Map;
+
+public class MNode<NK, NV> implements Map.Entry<NK, NV> {
 
     public NK key;
     public NV value;
@@ -10,5 +12,22 @@ public class MNode<NK, NV> {
         this.key = key;
         this.value = value;
         this.next = next;
+    }
+
+    @Override
+    public NK getKey() {
+        return key;
+    }
+
+    @Override
+    public NV getValue() {
+        return value;
+    }
+
+    @Override
+    public NV setValue(NV value) {
+        NV old = this.value;
+        this.value = value;
+        return old;
     }
 }
