@@ -1,0 +1,54 @@
+1. Inheritance
+	super
+
+   super parent Object
+	toString
+	equals -> see ArrayList method indexOf
+
+   Abstract class, Interface
+	abstract method
+
+  Comparable, Comparator
+
+  ArrayList
+	 methods https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+	 structure http://habrahabr.ru/post/128269/
+
+  Use ArrayList instead of array
+
+  read OOP sections in Java Head First
+
+2. Write own sorting algorithms
+	bubble, selection, insetion
+	http://visualgo.net/sorting.html
+        compare each algorithm by work time
+
+3. final word in java - define problem and goals
+   try to undestand "Immutability" principle
+
+	Make your class String(prev homework) - Immutable
+
+4. SOLID principles
+
+5. Strategy,Observer,AbstractMethod,Singleton,Facade - design patterns
+	book Head First Design Patterns
+
+
+3. Before implement all classes, draw class diagram
+    For  more comfortable structure override toString and equals
+    use ArrayList
+
+    	Вы наконец-то решили заняться чем-то полезным и открыть личное дело.
+	В голову пришла гениальная идея купить газельку и создать цирк на колесах.
+	Вы наняли в труппу пару "артистов" и даете концерты для психичесики неуравновешенных людей.
+
+Вам, как владельцу цирка, доступны следующие действия:
+ 1) посмотреть список артистов.
+ 2) нанять на работу нового циркача.
+ 3) уволить самого пьющего акробата.
+ 4) Отправить кого-то выступать (каждый выступает по разному)
+ 5) Узнать сколько раз выступал каждый из сотрудников
+ 6) Выплалить зарплату артисттам (канатоходцам доп % за риски)
+ 7) переехать на другое место
+
+4*. If you want more tasks, ask me!
