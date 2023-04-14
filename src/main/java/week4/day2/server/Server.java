@@ -1,4 +1,4 @@
-package ua.artcode.week4.day2.server;
+package week4.day2.server;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,31 +17,29 @@ public class Server {
         list = new ArrayList<>();
     }
 
-    public void run(){
+    public void run() {
         try {
-            ServerSocket serverSocket = new ServerSocket(8080);
-            System.out.println("Server was ran");
-            while(true){
-                Socket client = serverSocket.accept();// blocking method
+            while (true) {
+                System.out.println("Server is run");
+                ServerSocket serverSocket = new ServerSocket(8080);
+                Socket client = serverSocket.accept();
 
-                String clientInfo = String.format("count %d, address %s, port %d\n",
+                String clientInfo = String.format("count %d, address: %s\nport: %s",
                         id++,
-                        client.getInetAddress(),
+                client.getInetAddress(),
                         client.getPort());
-
                 list.add(clientInfo);
-
                 System.out.println(clientInfo);
 
-                PrintWriter pw = new PrintWriter(client.getOutputStream());
-                pw.printf("Hello from server. Your info %s, time %s\n", clientInfo, new Date());
-                pw.flush();
-                pw.close();
-
+                PrintWriter printWriter = new PrintWriter(client.getOutputStream());
+                printWriter.printf("Hello, your info: %s. Current time: %s\n", clientInfo, new Date());
+                printWriter.flush();
+                printWriter.close();
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
+
 }
