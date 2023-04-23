@@ -1,0 +1,64 @@
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682089938274" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090275702" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090298634" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090311225" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090336760" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090359950" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090404036" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090424421" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090431138" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090461741" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090488590" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090507677" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090520884" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090567853" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090579949" level="INFO" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="week7.jpa.test.TestLogging" timestamp="1682090598830" level="DEBUG" thread="main">
+<log4j:message><![CDATA[start action]]></log4j:message>
+</log4j:event>
+
