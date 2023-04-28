@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- scope="prototype"-->
+    <bean id = "myuser" class="week8.model.MyUser" scope="prototype">
+        <constructor-arg name="email" value="admin"/>
+        <constructor-arg name="pass" value="pass"/>
+    </bean>
+    <bean id="db" class="week8.db.ServiceDB"/>
+    <bean id="myGenDao" class="week8.dao.GeneraDao">
+        <property name="serviceDB" ref="db"/>
+    </bean>
+    <bean id = "validator" class="week8.validator.GeneralValidator"/>
+    <bean id = "service" class="week8.services.MyService" scope="singleton">
+        <property name="genValid" ref="validator"/>
+        <property name="genDao" ref="myGenDao"/>
+    </bean>
+</beans>
